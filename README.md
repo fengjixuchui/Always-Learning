@@ -1,16 +1,24 @@
 # 404 Not Found的知识库
-最近更新日期：2019/12/31
+最近更新日期：2020/02/21
 
 最近一周新增：
--  [Updater fails if not run as admin, even on a user installation](https://github.com/MiKTeX/miktex/issues/56)
+- [GRAPH CONVOLUTIONAL NETWORKS](http://tkipf.github.io/graph-convolutional-networks/)
+- [gcn](https://github.com/tkipf/gcn)
+- [git-lfs](https://coding.net/help/doc/git/git-lfs.html)
+- [卷积神经网络(CNN)模型结构](https://www.cnblogs.com/pinard/p/6483207.html)
+- [直观理解神经网络最后一层全连接+Softmax](https://www.cnblogs.com/shine-lee/p/10077961.html)（便于理解）
+- [总结卷积神经网络发展历程 - 没头脑的文章](https://zhuanlan.zhihu.com/p/76275427)（很全面）
+- [三次简化一张图：一招理解LSTM/GRU门控机制](https://zhuanlan.zhihu.com/p/28297161)（很清晰）
+
 ## 硬实力
 - [计算机理论基础](#计算机理论基础)
-	- [计算机网络](#计算机网络)
-	- [操作系统](#操作系统)
-	- [数据结构与算法](#数据结构与算法)
-	- [数据库](#数据库)
+    - [计算机网络](#计算机网络)
+    - [操作系统](#操作系统)
+    - [数据结构与算法](#数据结构与算法)
+    - [数据库](#数据库)
+    - [密码学基础](#密码学基础)
 - [计算机技术基础](#计算机技术)
-  	- [语言](#语言)
+    - [语言](#语言)
     - [框架](#框架)
     - [工具](#工具)
     - [技术](#技术)
@@ -22,8 +30,10 @@
 	- [代码审计](#代码审计)
 	- [数据安全](#数据安全)
 	- [云安全](#云安全)
+- [安全工具](#安全工具)
+    - [漏洞扫描](#漏洞扫描)
 - [安全研究](#安全研究)
-	- [APT检测](#APT检测)
+    - [APT检测](#APT检测)
 	- [恶意样本](#恶意样本)
 	- [Red Team](#RedTeam)
 	- [WAF](#WAF)
@@ -31,17 +41,17 @@
 	- [对抗机器流量](#对抗机器流量)
 	- [异常检测](#异常检测)
 	- [图与安全](#图与安全)
-	- [AI安全](#AI安全)
+	- [AI与安全](#AI与安全)
 - [人工智能](#人工智能)
-	- [算法体系](#算法体系)
-	- [基础知识](#基础知识)
-	- [机器学习](#机器学习)
-	- [深度学习](#深度学习)
-	- [强化学习](#强化学习)
-	- [应用领域](#应用领域)
-	- [综合素质](#技术素质)
+    - [算法体系](#算法体系)
+    - [基础知识](#基础知识)
+    - [机器学习](#机器学习)
+    - [深度学习](#深度学习)
+    - [强化学习](#强化学习)
+    - [应用领域](#应用领域)
+    - [综合素质](#技术素质)
 - [企业安全建设](#企业安全建设)
-	- [安全开发](#安全开发)
+    - [安全开发](#安全开发)
 	- [安全数据分析](#安全数据分析)
 	- [安全检测](#安全检测)
 	- [优秀开源安全项目/安全产品](#安全产品)
@@ -51,7 +61,7 @@
 	- [安全架构](#安全架构)
 	- [红蓝对抗](#红蓝对抗)
 - [安全发展](#安全发展)
-	- [个人发展](#个人发展)
+    - [个人发展](#个人发展)
 	- [行业发展](#行业发展)  
 ## 软实力
 - [职业规划](#职业规划)
@@ -97,6 +107,10 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 - [【视频讲解】LeetCode 第 1 号问题：两数之和](https://mp.weixin.qq.com/s/BEefuwFek3dpXl8wE0b9Iw)<br>
 - [年会抢红包策略](https://www.cdxy.me/?p=802)
 
+### 密码学基础
+- [对称加密与非对称加密优缺点详解](https://blog.csdn.net/aschulianwuyanzu/article/details/77978484)<br>
+对称加密也称单秘钥加密。算法有：AES、RC4、3DES。速度快，需要加密大量数据时使用，计算量小，效率高；一方秘钥泄露整个加密都不安全。非对称加密，算法有RSA、DSA/DSS，速度慢，安全性高。Hash算法有MD5、SHA1、SHA256。**三类算法是HTTPS通信的基础**。
+
 ### 数据库
 - [腾讯面试：一条SQL语句执行得很慢的原因有哪些？](https://zhuanlan.zhihu.com/p/62941196)<br>
 **补充学习**：数据库引擎（InnoDB支持事物处理和外键，但是慢一点、ISAM和MyISAM空间和内存使用低，插入数据快）、数据库编码（`character_set_client、character_set_connection、character_set_database、character_set_results、character_set_server、character_set_system`）、数据库索引(主键索引、聚集索引和非聚集索引)等基础知识点。<br>
@@ -136,61 +150,73 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 **MAC**：基础快捷键：截图、在应用程序中、文本处理、在finder中、在浏览器中；MAC启动和关机时的快捷键。
 - [常用 Git 命令单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)<br>
 **Git**：远程仓库-》本地仓库-〉暂存区-》工作区，git add .、git commit -m message、git push。
+- [git-lfs](https://coding.net/help/doc/git/git-lfs.html)<br>
+**Git-lfs**：git大文件上传扩展工具。
 - [tshark统计分析pcap包](https://www.wireshark.org/docs/man-pages/tshark.html)
 
 ### 技术
 - [解码与xss](https://blog.csdn.net/he_and/article/details/80588409)(**原文中有一处错误“html实体编码后“应该是`&#x5c;&#x75;&#x37;&#x32;` 产生的原因就是浏览器的html自解码**)<br>
-**浏览器技术-解码顺序**：浏览器解码主要涉及到两个部分：渲染引擎和js解析器。解码顺序：在什么环境下就进行什么解码，解码顺序为：最外层的环境对应的编码最先解码。举个例子:在`<a href=javascript:alert(1)>click</a>`中alert(1)处在html->url->js环境中。
-    `1、<a href=javascript:al\u65rt(1)>click</a> 采用unicode编码e，html和url环境下都不能解码，只有在js环境下才能解码为字符e，所以不会弹窗`
-    `2、<a href=javascript:al%65rt(1)>click</a> 采用url编码，在执行js前，url解码%65，所以到了js引擎启动时，看到了完整的alert(1)`
-    `3、<a href=javascript:alert(1)>click</a> html实体解码先执行了`
-    `4、<a href=java%61script:alert(1)>click</a> 在url解码环节，不会认为javascript是伪协议，会出现错误。`
-    `5、<a href=# onclick="alert('&#x27;&#x29;;alert&#x28;&#x27;2');">click</a> htmlparser会优先于JavaScript parser执行，所以解析过程是htmlencode的字符先被解码，然后执行JavaScript事件`
+  **浏览器技术-解码顺序**：浏览器解码主要涉及到两个部分：渲染引擎和js解析器。解码顺序：在什么环境下就进行什么解码，解码顺序为：最外层的环境对应的编码最先解码。举个例子:在`<a href=javascript:alert(1)>click</a>`中alert(1)处在html->url->js环境中。
+  1、<a href=javascript:al\u65rt(1)>click</a> 采用unicode编码e，html和url环境下都不能解码，只有在js环境下才能解码为字符e，所以不会弹窗<br>
+  2、<a href=javascript:al%65rt(1)>click</a> 采用url编码，在执行js前，url解码%65，所以到了js引擎启动时，看到了完整的alert(1)<br>
+  3、<a href=javascript:alert(1)>click</a> html实体解码先执行了<br>
+  4、<a href=java%61script:alert(1)>click</a> 在url解码环节，不会认为javascript是伪协议，会出现错误。<br>
+  5、<a href=# onclick="alert('&#x27;&#x29;;alert&#x28;&#x27;2');">click</a> htmlparser会优先于JavaScript parser执行，所以解析过程是htmlencode的字符先被解码，然后执行JavaScript事件。<br>
   **浏览器解码顺序是XSS中bypass的基础**。
 - [数据分析与可视化：谁是安全圈的吃鸡第一人](https://www.freebuf.com/articles/web/199925.html?from=timeline&isappinstalled=0)（学到了）<br>
-**数据分析与可视化**：收集数据集--->观察数据集--->社群发现与社区关系--->玩家画像。
-- [dockerfile 和 docker-compose 的关系](https://segmentfault.com/q/1010000009883848)<br>
-**docker技术**：文件和文件夹的关系。
-- [dockerfile 与 docker-compose的区别是什么?](https://segmentfault.com/q/1010000009883848)<br>
-**docker技术**：docker-compose是编排容器的。
-- [堡垒机是什么？](https://www.zhihu.com/question/21036511)<br>
-**堡垒机技术**：为访问集群限定一个入口；方便权限控制以及监控。
-- [产品的可行性需从哪几个方面分析？](https://zhuanlan.zhihu.com/p/20875988)<br>
-**可行性分析**：产品可行性分为：技术可行性、经济可行性、社会可行性，其中我关注的是技术可行性。技术可行性主要从竞争对手功能比较、技术风险及规避方法、易用性及用户使用门槛、产品环境依赖性等方面衡量。
-- [Nginx、Gunicorn在服务器中分别起什么作用？](https://www.zhihu.com/question/38528616)<br>
-**应用服务器**：Nginx部署场景：负载均衡（tornado之类的框架只支持单核，所以多进程部署需要反向负载均衡。gunicorn本身就是多进程其实不需要）、静态文件支持、抗并发压力、额外的访问控制。
-- [维基百科：Kerberos](https://zh.wikipedia.org/wiki/Kerberos)<br>
-**Kerberos**：Kerberos的基本描述、协议内容和具体流程。
-- [数据分析与可视化：谁是安全圈的吃鸡第一人](https://www.freebuf.com/articles/web/199925.html?from=timeline&isappinstalled=0)（学到了）<br>
-**数据分析与可视化**：收集数据集--->观察数据集--->社群发现与社区关系--->玩家画像。
+  **数据分析与可视化**：收集数据集--->观察数据集--->社群发现与社区关系--->玩家画像。
 - [dockerfile 和 docker-compose 的关系](https://segmentfault.com/q/1010000009883848)<br>
   **docker技术**：文件和文件夹的关系。
 - [dockerfile 与 docker-compose的区别是什么?](https://segmentfault.com/q/1010000009883848)<br>
-**docker技术**：docker-compose是编排容器的。
+  **docker技术**：docker-compose是编排容器的。
 - [堡垒机是什么？](https://www.zhihu.com/question/21036511)<br>
-**堡垒机技术**：为访问集群限定一个入口；方便权限控制以及监控。
+  **堡垒机技术**：为访问集群限定一个入口；方便权限控制以及监控。
 - [产品的可行性需从哪几个方面分析？](https://zhuanlan.zhihu.com/p/20875988)<br>
-**可行性分析**：产品可行性分为：技术可行性、经济可行性、社会可行性，其中我关注的是技术可行性。技术可行性主要从竞争对手功能比较、技术风险及规避方法、易用性及用户使用门槛、产品环境依赖性等方面衡量。
+  **可行性分析**：产品可行性分为：技术可行性、经济可行性、社会可行性，其中我关注的是技术可行性。技术可行性主要从竞争对手功能比较、技术风险及规避方法、易用性及用户使用门槛、产品环境依赖性等方面衡量。
 - [Nginx、Gunicorn在服务器中分别起什么作用？](https://www.zhihu.com/question/38528616)<br>
-**应用服务器**：Nginx部署场景：负载均衡（tornado之类的框架只支持单核，所以多进程部署需要反向负载均衡。gunicorn本身就是多进程其实不需要）、静态文件支持、抗并发压力、额外的访问控制。
+  **应用服务器**：Nginx部署场景：负载均衡（tornado之类的框架只支持单核，所以多进程部署需要反向负载均衡。gunicorn本身就是多进程其实不需要）、静态文件支持、抗并发压力、额外的访问控制。
 - [维基百科：Kerberos](https://zh.wikipedia.org/wiki/Kerberos)<br>
-**Kerberos**：Kerberos的基本描述、协议内容和具体流程。
+  **Kerberos**：Kerberos的基本描述、协议内容和具体流程。
+- [数据分析与可视化：谁是安全圈的吃鸡第一人](https://www.freebuf.com/articles/web/199925.html?from=timeline&isappinstalled=0)（学到了）<br>
+  **数据分析与可视化**：收集数据集--->观察数据集--->社群发现与社区关系--->玩家画像。
+- [dockerfile 和 docker-compose 的关系](https://segmentfault.com/q/1010000009883848)<br>
+  **docker技术**：文件和文件夹的关系。
+- [dockerfile 与 docker-compose的区别是什么?](https://segmentfault.com/q/1010000009883848)<br>
+  **docker技术**：docker-compose是编排容器的。
+- [堡垒机是什么？](https://www.zhihu.com/question/21036511)<br>
+  **堡垒机技术**：为访问集群限定一个入口；方便权限控制以及监控。
+- [产品的可行性需从哪几个方面分析？](https://zhuanlan.zhihu.com/p/20875988)<br>
+  **可行性分析**：产品可行性分为：技术可行性、经济可行性、社会可行性，其中我关注的是技术可行性。技术可行性主要从竞争对手功能比较、技术风险及规避方法、易用性及用户使用门槛、产品环境依赖性等方面衡量。
+- [Nginx、Gunicorn在服务器中分别起什么作用？](https://www.zhihu.com/question/38528616)<br>
+  **应用服务器**：Nginx部署场景：负载均衡（tornado之类的框架只支持单核，所以多进程部署需要反向负载均衡。gunicorn本身就是多进程其实不需要）、静态文件支持、抗并发压力、额外的访问控制。
+- [维基百科：Kerberos](https://zh.wikipedia.org/wiki/Kerberos)<br>
+  **Kerberos**：Kerberos的基本描述、协议内容和具体流程。
 - [什么是**微服务架构**？](https://www.zhihu.com/question/65502802)
 - [什么是Service Mesh（服务网格）](https://jimmysong.io/posts/what-is-a-service-mesh/)<br>
-**微服务架构**：Why：为什么使用服务网格？传统的MVC三层Web应用程序架构下，服务之间的通讯并不复杂，在应用程序内部自己管理即可，但在如今复杂的大型网站情况下，单体应用被分解成众多的微服务，服务之间的依赖和通讯十分复杂。What：服务网格，是服务间通信的基础设施层，可以把它比作是应用程序或是微服务间的TCP/IP，负责服务间网络调用、限流、熔断和监控。Service Mesh的特点：应用程序间通讯的中间层、轻量级网络代理、应用程序无感知、解耦应用程序的重试/超时、监控、追踪和服务发现。目前流行的开源软件是Istio和Linkerd，都可以在Cloud Native的kubernetes环境中集成。
+  **微服务架构**：Why：为什么使用服务网格？传统的MVC三层Web应用程序架构下，服务之间的通讯并不复杂，在应用程序内部自己管理即可，但在如今复杂的大型网站情况下，单体应用被分解成众多的微服务，服务之间的依赖和通讯十分复杂。What：服务网格，是服务间通信的基础设施层，可以把它比作是应用程序或是微服务间的TCP/IP，负责服务间网络调用、限流、熔断和监控。Service Mesh的特点：应用程序间通讯的中间层、轻量级网络代理、应用程序无感知、解耦应用程序的重试/超时、监控、追踪和服务发现。目前流行的开源软件是Istio和Linkerd，都可以在Cloud Native的kubernetes环境中集成。
 - [Updater fails if not run as admin, even on a user installation](https://github.com/MiKTeX/miktex/issues/56)<br>
-  ![miktex1](https://user-images.githubusercontent.com/6771275/35782587-665090de-09fa-11e8-95c7-e16ea39ce46e.png)
+  ![miktex1](https://user-images.githubusercontent.com/6771275/35782587-665090de-09fa-11e8-95c7-e16ea39ce46e.png)<br>
 **LaTeX**：MiKTeX（注册表问题和管理员权限问题）+TeXnicCenter（不能生成pdf问题，设置Build中adobe execute path为正版AcroRd32.exe）+Adobe Acrobat Reader DC，再利用破解版Adobe Acrobat DC转其他格式。
+- [HTTPS原理及交互过程](https://zhuanlan.zhihu.com/p/28197870)<br>
+  **HTTPS**：HTTPS在传输数据之前需要浏览器和网站之间进行一次握手，在握手的过程中将确认双方加密传输数据的密码信息。获取公钥-》浏览器产生随机（对称）秘钥-》使用公钥对对称秘钥加密-》发送加密后的对称秘钥-》通过对称秘钥加密的密文通信。**HTTPS通信的整个过程使用了对称加密、非对称加密和HASH算法**。
+- [浏览器的同源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)<br>
+  **浏览器技术**：同源策略是浏览器最核心最基本的安全功能，同源的定义为：协议/主机/端口。
+- [九种跨域方式实现原理（完整版）](https://juejin.im/post/5c23993de51d457b8c1f4ee1)<br>
+  **浏览器技术**：跨域请求解决方案：JSONP（依赖script标签没有跨域限制的漏洞）、CORS（跨域资源共享）、postMessage、websocket、Node中间件代理、nginx反向代理、windows.name+iframe、location.hash+iframe、document.domain+iframe。<br>
+  **CORS**支持所有类型的HTTP请求，是跨域HTTP请求的根本解决方案。**JSONP**只支持GET请求，优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。不管是**Node中间件代理**还是**nginx反向代理**，主要是通过同源策略对服务器不加限制。日常工作中，用的比较多的跨域方案是CORS和nginx反向代理。
+- [如何在Jupyter Notebook中使用Python虚拟环境？](https://zhuanlan.zhihu.com/p/29564719)<br>
+**Anaconda**：安装插件，conda install nb_conda
 
 ## 底层研究
 - [python requests库流程简析](https://www.jianshu.com/p/a5e98489dcb8)<br>
-**python requests库实现**：socket->httplib->urllib->urllib3->requests。requests.get的内部调用流程：requests.get->requests()->Session.request->Session.send->adapter.send->HTTPConnectionPool(urllib3)->HTTPConnection(httplib)。
-
-	1、socket：是TCP/IP最直接的实现，实现端到端的网络传输
-	2、httplib：基于socket库，是最基础最底层的http库，主要将数据按照http协议组织，然后创建socket连接，将封装的数据发往服务端
-	3、urllib：基于httplib库，主要对url的解析和编码做进一步处理
-	4、urllib3：基于httplib库，相较于urllib更高级的地方在于用PoolManager实现了socket连接复用和线程安全，提高了效率
-	5、requests：基于urllib3库，比urllib3更高级的是实现了Session对象，用Session对象保存一些数据状态，进一步提高了效率
+  **python requests库实现**：socket->httplib->urllib->urllib3->requests。requests.get的内部调用流程：requests.get->requests()->Session.request->Session.send->adapter.send->HTTPConnectionPool(urllib3)->HTTPConnection(httplib)。
+  ```
+  1、socket：是TCP/IP最直接的实现，实现端到端的网络传输
+  2、httplib：基于socket库，是最基础最底层的http库，主要将数据按照http协议组织，然后创建socket连接，将封装的数据发往服务端
+  3、urllib：基于httplib库，主要对url的解析和编码做进一步处理
+  4、urllib3：基于httplib库，相较于urllib更高级的地方在于用PoolManager实现了socket连接复用和线程安全，提高了效率
+  5、requests：基于urllib3库，比urllib3更高级的是实现了Session对象，用Session对象保存一些数据状态，进一步提高了效率
+  ```
 - [XGBoost原理和底层实现剖析](https://snaildove.github.io/2018/10/02/get-started-XGBoost/)（学到了）<br>
 **XGBoost**：从树的分数（目标函数：损失函数（二阶展开）+正则项），树的结构（分裂决策（预排序））方面理解。
 - [Lightgbm 直方图优化算法深入理解](https://blog.csdn.net/anshuai_aw1/article/details/83040541)<br>
@@ -208,6 +234,8 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 **XXE漏洞**：XXE的原理：调用外部实体，XXE的利用：利用通用实体、参数实体、外部实体、内部实体进行文件读取，内网主机和端口探测、内网RCE（php下需要expect扩展的支持）
 - [mysql无逗号的注入技巧](http://wonderkun.cc/index.html/?p=442)<br>
 **注入攻击**：sql注入、xml注入（一种标记语言，通过标签对数据进行结构化表示）、代码注入（eval类）、CRLF注入（\r\n）。Mysql injection：使用注释绕过空格，使用括号绕过空格，使用%20 %0a等符号替换空格；union查询下，使用join绕过逗号过滤，`select id,ip from client_ip where 1>2  union select * from  ( (select user())a JOIN  (select version())b ); `使用`select case when（条件） then 代码1 else 代码2 end`绕过逗号过滤，`insert into client_ip (ip) values ('ip'+(select case when (substring((select user()) from 1 for 1)='e') then sleep(3) else 0 end));`
+- [CRLF Injection漏洞的利用与实例分析]([https://wooyun.js.org/drops/CRLF%20Injection%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%88%A9%E7%94%A8%E4%B8%8E%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90.html](https://wooyun.js.org/drops/CRLF Injection漏洞的利用与实例分析.html))<br>
+CRLF是“回车+换行”(\r\n)的简称。HTTP Header和HTTP Body是用两个CRLF分隔的。CRLF injection又叫做HTTP Response Splitting，简称HRS。X-XSS-Protection:0关掉浏览器对反射型XSS过滤的保护策略。
 - [SSRF漏洞利用与getshell实战（精选）](https://mp.weixin.qq.com/s/1hzfFhh4HBlilNmHxSfa8g)
 - [SSRF漏洞中绕过过滤（IP限制）的几种方法总结](https://www.freebuf.com/articles/web/135342.html)<br>
 **SSRF**：利用302跳转（xip.io、短地址、自写服务）；DNS 重绑定（绕过IP限制）；更改IP地址写法；利用解析URL所出现的问题：`http://www.baidu.com@192.168.0.1/`；通过各种非HTTP协议
@@ -239,9 +267,17 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 ### 云安全
 - [云安全，到底是什么一回事？](https://www.zhihu.com/question/19567976/answer/604675005?utm_source=wechat_session&utm_medium=social&utm_oi=663312716719067136)<br>
 云安全三大研究方向：云计算安全、安全基础设施的云化、云安全服务。在云安全未来发展趋势中也提到了数据安全协作，说明无论哪种场景，数据都是安全的重点关注对象。云安全服务可以看成厨师做饭（来自cdxy的ppt），云计算（能源）、算法（工具）、数据（原料）、工程师（厨师）、能做成什么样的饭（能提供的安全服务）
+- [云安全的未来](https://mp.weixin.qq.com/s/MfjRfJ04fnRY8gI5s6BA8g)（深度长文）<br>
+**行文思路**：云安全的市场趋势-》云安全的主流产品（云平台的安全产品和第三方云安全产品CWPP、CSPM、CASB）-》云安全与SD-WAN的结合-》云原生（DevOps、持续交付、微服务、容器）安全。
 
 ### 其他
 - [安全资料：企业实验室、安全社区、安全团队、安全工具等](http://blkstone.github.io/friend/)
+
+## 安全工具
+
+### 漏洞扫描
+
+- [使用 xray 代理模式进行漏洞扫描](https://xray.cool/xray/#/tutorial/webscan_proxy)
 
 ## 安全研究
 ### APT检测
@@ -253,7 +289,7 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 **恶意HTTP外连流量检测**：**总体思路**：**1、数据收集**，沙箱运行恶意样本，收集恶意流量，人工区分恶意流量和白流量，再根据威胁情报对恶意流量划分家族。**2、数据分析**（特征工程）：同一家族恶意外连流量的相似性，可以考虑使用聚类算法将同一家族的流量聚为一类，提取它们的共性，形成模板，再用模板检测未知流量。**3、算法：训练阶段**：提取HTTP外连流量--->提取请求头字段--->泛化--->相似度计算（**请求头中字段特异性加权再计算相似性**）--->层次聚类--->生成恶意外连流量模板（聚类中该字段并集作为该字段在模板中的值）。**检测阶段**：未知HTTP外连流量--->提取请求头字段--->泛化--->与恶意模板匹配--->判断相似度是否超过阈值（阈值确定）
 - [Cuckoo恶意软件自动化分析平台搭建](https://wooyun.js.org/drops/Cuckoo%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA.html)
 - [Cuckoo 恶意软件分析环境](https://github.com/crazywa1ker/DarthSidious-Chinese/blob/master/BUILDING-A-LAB/Cuckoo%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90%E7%8E%AF%E5%A2%83.md)
-- [Playing with Cuckoo](https://rastamouse.me/2017/05/playing-with-cuckoo/)
+- [Playing with Cuckoo](https://rastamouse.me/2017/05/playing-with-cuckoo/)<br>
 **Cuckoo沙箱：**在搭建Cuckoo恶意样本分析环境的过程中遇到了很多坑，现在还印象深刻的还有**pip 换源** -i https://pypi.tuna.tsinghua.edu.cn/simple；配置agent.py到startup文件夹中；注意windows10、ubuntu16和windows7之间的网络关系，NAT和Host-Only模式。物理主机windows10装vmware，vmware装ubuntu16，ubuntu16装virtualbox和cuckoo server端，virtualbox装windows7 作为agent端。
 - [恶意样本分析资源汇总](https://www.malwareanalysis.cn/1054/?from=groupmessage&isappinstalled=0)
 
@@ -309,18 +345,14 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 - [社区发现算法 - Fast Unfolding（Louvian）算法初探](https://www.cnblogs.com/LittleHann/p/9078909.html)
 - [A DGA Odyssey PDNS Driven DGA Analysis](https://pc.nanog.org/static/published/meetings/NANOG71/1444/20171004_Gong_A_Dga_Odyssey__v1.pdf)
 
-### AI安全
-- [从安全视角对机器学习的部分思考](https://mp.weixin.qq.com/s/kP4YuiksI1dfZdT8Z_j_cQ)
-- [中科院信工所发布《深度学习系统的隐私与安全》综述论文，187篇文献总结](https://mp.weixin.qq.com/s/B0FTTAppy_AUt6SXVFL-Pg)
+### AI与安全
+- [安全场景、基于AI的安全算法和安全数据分析学习资料整理](https://github.com/404notf0und/AI-for-Security-Learning)
 - [Towards Privacy and Security of Deep Learning Systems: A Survey](https://arxiv.org/pdf/1911.12562v1.pdf)<br>
 **AI安全的攻击面**：训练阶段和测试阶段的数据和模型方面，攻击有数据中毒和对抗性样本，模型提取和模型反转等。
-
-### 强化学习与安全
-- [Deep Exploit: Fully automatic penetration test tool using Machine Learning](https://securityonline.info/deep-exploit/)
-- [Github:Deep Exploit](https://github.com/13o-bbr-bbq/machine_learning_security/tree/master/DeepExploit)
-- [Github:GyoiThon](https://github.com/gyoisamurai/GyoiThon)
+- [智能威胁检测：基于Spark的SOC机器学习检测平台](https://mp.weixin.qq.com/s/0FNXGMQXu4LkTIC0ZbwwpQ) 
 
 ## 人工智能
+
 ### 算法体系
 - [机器学习算法集锦：从贝叶斯到深度学习及各自优缺点](https://mp.weixin.qq.com/s/idxuzwUKG_Q1yUtpipG4Xw)<br>
 **算法知识框架**：主要从算法的定义、过程、代表性算法、优缺点解释回归、正则化算法、人工神经网络、深度学习||决策树算法、集成算法||支持向量机||降维算法、聚类算法||基于实例的算法||贝叶斯算法||关联规则学习算法||图模型。<br>
@@ -365,8 +397,41 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **无监督学习-层次聚类-相似性计算**：曼哈顿距离、欧式距离、切比雪夫距离、余弦相似度、皮尔逊相关系数、Jaccard系数。
 
 ### 深度学习
+#### GPU环境搭建
+- [Tensorflow和Keras 常见问题（持续更新~）](https://zhuanlan.zhihu.com/p/81721574)（坑点）
+- [Tested build configurations](https://tensorflow.google.cn/install/source)（版本对应速查表）
+- [windows tensorflow-gpu的安装](https://zhuanlan.zhihu.com/p/35717544)（靠谱）
+- [windows下安装配置cudn和cudnn](https://www.jianshu.com/p/9bdeb033e765)<br>
+**问题本质**：总的来说，是英伟达显卡驱动版本、cuda、cudnn和tensorflow-gpu之间版本的对应问题。最好装tensorflow-gpu==1.14.0,tensorflow-gpu==2.0需要cuda==10.0，10.2会报错，tensorflow-gpu==2.0不支持。
+- [win10搭建tensorflow-gpu环境](https://www.cnblogs.com/wanyu416/p/9536853.html)<br>
+**问题本质**：CUDA的各种环境变量添加。
+
+#### 深度学习基础知识
+- [深度学习中的batch的大小对学习效果有何影响？](https://www.zhihu.com/question/32673260)
+- [Batch Normalization原理与实战](https://zhuanlan.zhihu.com/p/34879333)（**还没完全看懂**）
+
+#### 神经网络基本部件
+- [如何计算感受野(Receptive Field)——原理](https://zhuanlan.zhihu.com/p/31004121)<br>
+感受野：卷积层越深，感受野越大，计算公式为(N-1)_RF = f(N_RF, stride, kernel) = (N_RF - 1) * stride + kernel，思路为倒推法。
+- [如何理解空洞卷积（dilated convolution）谭旭的回答](https://www.zhihu.com/question/54149221/answer/192025860)<br>
+空洞卷积：池化层减小图像尺寸同时增大感受野，空洞卷积的优点是不做pooling损失信息的情况下，增大感受野。3层3*3的传统卷积叠加起来，stride为1的话，只能达到(kernel_size-1)layer+1=7的感受野，和层数layer成线性关系，而空洞卷积的感受野是指数级的增长，计算公式为(2^layer-1)(kernel_size-1)+kernel_size=15。
+- [空洞卷积（dilated convolution）感受野计算](https://zhuanlan.zhihu.com/p/61889386)
+- [空洞卷积(dilated Convolution)](https://zhuanlan.zhihu.com/p/43784441)
+- [直观理解神经网络最后一层全连接+Softmax](https://www.cnblogs.com/shine-lee/p/10077961.html)（便于理解）<br>
+**全连接层**：可以理解为对特征的加权求和。
+
+#### 神经网络基本结构
 - [一组图文，读懂深度学习中的卷积网络到底怎么回事？](https://mp.weixin.qq.com/s?__biz=MzIyMzk1MDE3Nw==&mid=2247497838&idx=1&sn=0155aec301bfd63af03fb17727421e1e&chksm=e814dc60df635576971ccd515c440721af1e4d3c256d421953bc4944d2e724c476c5a689f197&mpshare=1&scene=1&srcid=0211JyZWQrYdounFDM2LW3AE&pass_ticket=hAXdmKc6AZ3DdksFdOmip3HL8cWLkL5u880JMyZ2etpYu1WnmEdvgA09xYgh9Im%2B#rd)<br>
 **卷积神经网络**：卷积层参数：内核大小（卷积视野3乘3）、步幅（下采样2）、padding（填充）、输入和输出通道。卷积类型：引入扩张率参数的扩张卷积、转置卷积、可分离卷积。
+- [卷积神经网络(CNN)模型结构](https://www.cnblogs.com/pinard/p/6483207.html)
+- [总结卷积神经网络发展历程 - 没头脑的文章](https://zhuanlan.zhihu.com/p/76275427)（很全面）
+- [三次简化一张图：一招理解LSTM/GRU门控机制](https://zhuanlan.zhihu.com/p/28297161)（很清晰）<br>
+**循环神经网络**：**文中电路图的形式好理解**。RNN：输入状态、隐藏状态。LSTM：输入状态、隐藏状态、细胞状态、3个门。GRU：输入状态、隐藏状态、2个门。LSTM和GRU通过设计门控机制缓解RNN梯度传播问题。
+- [gcn](https://github.com/tkipf/gcn)
+- [GRAPH CONVOLUTIONAL NETWORKS](http://tkipf.github.io/graph-convolutional-networks/)<br>
+**图神经网络**：相较于CNN，区别是图卷积算子计算公式。
+
+#### 神经网络应用
 - [[AI识人]OpenPose：实时多人2D姿态估计 | 附视频测试及源码链接](https://zhuanlan.zhihu.com/p/37526892)
 - [使用生成对抗网络(GAN)生成DGA](http://webber.tech/posts/%E4%BD%BF%E7%94%A8%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C%28GAN%29%E7%94%9F%E6%88%90DGA/)
 - [GAN_for_DGA](https://github.com/bts-webber/GAN_for_DGA/blob/master/G.py)
@@ -374,6 +439,8 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 - [Wasserstein GAN in Keras](https://myurasov.github.io/2017/09/24/wasserstein-gan-keras.html?r)
 - [WassersteinGAN](https://github.com/tdeboissiere/DeepLearningImplementations/tree/master/WassersteinGAN)
 - [keras-acgan](https://github.com/lukedeo/keras-acgan)
+- [用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践](https://zhuanlan.zhihu.com/p/25928551)<br>
+**NLP**：传统的高维稀疏->现在的低维稠密。**注意事项**：类目不均衡、理解数据（badcase）、fine-tuning（只用word2vec训练的词向量作为特征表示，可能会损失很大效果，**预训练+微调**）、一定要用dropout、避免训练震荡、超参调节、未必一定要softmax loss、模型不是最重要的、关注迭代质量（为什么？结论？下一步？）
 
 ### 强化学习
 - [深度强化学习的弱点和局限](https://mp.weixin.qq.com/s?__biz=MzI3ODkxODU3Mg==&mid=2247485609&idx=1&sn=6b71f5f8ebd4e920384f07b97ce92a9c&chksm=eb4eec6adc39657c81169f1ae9ce477e4da692941238c35deb26a11ed7ec70073784cfd935a8&scene=21#wechat_redirect)
@@ -401,6 +468,9 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **NLP**：NLP统计语言模型：定义（计算一个句子的概率的模型，也就是判断一句话是否是人话的概率）、马尔科夫假设（随便一个词出现的概率只与它前面出现的有限的一个或几个词有关）、N元模型（一元语言模型unigram、二元语言模型bigram）。
 - [有谁可以解释下word embedding? - YJango的回答 - 知乎](https://www.zhihu.com/question/32275069/answer/197000927)<br>
 **NLP**：单词表达：one hot representation、distributed representation。Word embedding：以神经网络分析one hot representation和distributed representation作为例子，证明用distributed representation表达一个单词是比较好的。word embedding就是神经网络分析distributed representation所显示的效果，降低训练所需的数据量，就是要从数据中自动学习出输入空间到distributed representation空间的映射f（相当于加入了先验知识，相同的东西不需要分别用不同的数据进行学习）。训练方法：如何自动寻找到映射f，将one hot representation转变成distributed representation呢？思想：单词意思需要放在特定的上下文中去理解，例子：`这个可爱的 泰迪 舔了我的脸`和`这个可爱的 京巴 舔了我的脸`，用输入单词 x 作为中心单词去预测其他单词 z 出现在其周边的可能性（**至此我才明白为什么说词嵌入是神经网络训练语言模型的副产品这句话**）。用输入单词作为中心单词去预测周边单词的方式叫skip-gram，用输入单词作为周边单词去预测中心单词的方式叫CBOW。
+- [使用TextCNN模型探究恶意软件检测问题](https://xz.aliyun.com/t/6785)<br>
+**恶意软件检测**：改进分为两个方面：调参和结构。调参：Embedding层的inputLen、output_dim，EarlyStopping，样本比例参数class_weight,卷积层和全连接层的正则化参数l2，适配硬件(GPU、TPU)的batch_size。结构：增加了全局池化层。<br>
+**学到了**：一个trick，通过训练集和评价指标logloss计算测试集的各标签数量，以此调整训练阶段的参数class_weight，还可以事先达到“对答案”的效果。和一个T大大佬在datacon域名安全检测比赛中使用的trick如出一辙。
 
 ### 综合素质
 - [算法工程师必须要知道的面试技能雷达图](https://zhuanlan.zhihu.com/p/54089811)（学到了）<br>
@@ -504,6 +574,8 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **红蓝对抗的How**：仿真APT--->蓝军团队需要沉淀出一套体系化的攻击手法知识库和武器库--->ATT&&CK矩阵框架。<br>
 **红蓝对抗Do过程中的挑战**：效率/收益；攻击成本量化；来自业务的挑战（红蓝对抗的核心目标是为业务保驾护航）。<br>
 **红蓝对抗的Future**：多层次多范围的蓝军；蓝军的自动化渗透平台/协同作战平台；蓝军能力对外输出。
+- [网络空间安全时代的红蓝对抗建设](https://mp.weixin.qq.com/s/dzU7mTbD-Hmw7ZxB6FRb5Q)（附录存在红蓝对抗相关文章）<br>
+**实战是检验安全防护能力的唯一标准。**渗透测试，适用于企业安全体系建设初期或者一穷二白阶段，而红蓝对抗是渗透测试的升级版，不仅关注安全漏洞，重点检验的是企业安全建设体系的缺陷，**红蓝对抗的边界**不只是信息安全视角下的网络渗透攻击，随着新技术新架构的出现，**还拓展到网络空间安全视角下的AIoT、工业互联网、业务风控、窃听/窃视等领域。**
 
 ## 安全发展
 ### 个人发展
@@ -519,6 +591,17 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 - [十面阿里，七面头条，你猜我进阿里没？](https://mp.weixin.qq.com/s/CUYbxx2qm9OXb8SUHdjbXA)<br>
 **面试**：Java版优秀面经，java必备。
 - [书剑恩仇录之我与阿里巴巴](http://michael282694.com/post/shu-jian-en-chou-lu-zhi-wo-yu-a-li-ba-ba)（太强了）
+- [安全招聘之面试题](https://feei.cn/security-recruit-questions/)（学到了）<br>
+**行文思路**：渗透测试（WEB方向）、安全研发（JAVA方向）、安全运营（合规审计方向）、安全架构（安全管理方向）<br>
+**补充学习**：CRLF、对称加密和非对称加密的区别和优缺点、HTTPS的交互流程、同源策略、跨域请求。
+- [安全招聘之好的简历是怎么样的？](https://feei.cn/security-recruit-resume/)
+- [安全招聘之安全行业现状](https://feei.cn/security-recruit-industry-status/)
+- [安全招聘之安全从业人员必备素质](https://feei.cn/security-recruit-employees-quality/)<br>
+**行文思路：基础素质=基础能力（自我驱动+自主学习）+专业能力（渗透攻防+软件开发）。进阶素质=聪明（智商+情商）+勇敢乐观+自省**。
+- [安全招聘之面试流程](https://feei.cn/security-recruit-process/)<br>
+现在偷的懒后面会花更多代价来弥补。
+- [一个安全工程师的2019](https://mp.weixin.qq.com/s/rr2f1RxFTjLSGlqxaG-aog)<br>
+**行文思路**：老赛道与新征程-》行业探索者还是追随者-》行业信息透明互通-》生活加点盐。
 
 #### 职业发展
 - [安全研究者的自我修养](https://mp.weixin.qq.com/s/WrSZpqgq6gvZwEIqghqggg)
@@ -538,6 +621,8 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 - [网络安全行业竞争格局浅析](https://mp.weixin.qq.com/s/4odKGqDzyFI1CzWwVvmXEw)<br>
 **市场格局**：基础安全防护（传统安全防护能力），中级安全防护（海量数据建模与分析能力），高级安全防护（云端威胁情报与分析能力），中高级安全防护市场广阔。此外，全文在多处凸显了人工智能技术，智能安全开始迈入开悟之坡了吗？！半数以上的人看好智能安全，也有人不看好智能安全，未来会怎么样，让我们拭目以待！
 - [ZoomEye 网络空间测绘——委内瑞拉停电事件对其网络关键基础设施和重要信息系统影响](https://mp.weixin.qq.com/s/rGMggOde1XQjrYClphsi4A)
+- [2020安全工作展望](https://mp.weixin.qq.com/s/mihqZ0BJAgee1bEm1ZJAQw)<br>
+**行文逻辑**：**2019大事件**：HW行动将安全从隐性变成显性，低频变成高频，暴露问题，促进管理层对安全的重视，此为大背景；等保2.0安全合规愈加严格。**2019大变化**：领导重视了；实战化了。**2020甲方安全关注技术点**：安全运营（覆盖率和正常率等指标、是否有验证思路：能否在一定时间内主动发现安全措施失效）和安全资产管理（CMDB、主机上数据、流量、扫描、人工添加）。**2020关注“人”的需求**。**2020展望行业**：甲方安全团队组织架构会发生剧烈变化，安全团队能否承受变化；甲乙两方相处之道；安全黑天鹅事件越来越多。
 
 #### 安全产品
 - [C端安全产品的未来之路](https://mp.weixin.qq.com/s/Sp15EkyNKBZvOZHrJ7zJ2w)<br>
@@ -582,6 +667,9 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **构建公司的数据IT能力**：搭建基础且通用的数据流框架：应用层、归集层、加工层、分析层、展示层；
 同时根据各种数据库选型指标选择对应的数据库存储产品，数据库选型指标比如容量、水平扩展性、查询实时性、查询灵活性、写入速度、事务、数据存储、处理数据规模、列扩展性。**在搭建数据框架中需要注意的点是：需要实现公司级别的业务数据架构**。基于业务对整个公司的数据进行体系化的梳理，任何的业务变化都会体现在数据之上，实现数据充分体现业务现状的目的。**要完成这一步的关键是完成公司级别的主数据管理**：明确各项数据的业务含义和口径、明确每个数据的职责单位、打通数据链路，推动数据共享。<br>
 **引领团队走向胜利**：做“排长”而不要做“军长”；让合适的人做合适的事；明确规则，及时兑现。
+- [阿里巴巴高级算法专家威视：组建技术团队的一些思考](https://zhuanlan.zhihu.com/p/99701435)（**学到了**）<br>
+**行文思路：团队的定位**（定位（能力、业务、服务）、壁垒（以不变应万变沉淀风险管控知识作为壁垒）和价值（提供不同层次的服务形式））-》**团队的能力**（连接、生产、传播、服务）-》**组织与个人的关系**-》**招人**-》**用人**-》**对内管理模式**（找对前进的方向、绩效的考核（3个维度：业务结果、能力进步、技术影响力））<br>
+**学到了：建设技术体系解决某一类问题，而不是某个技术点去解决某一个问题。**
 - [26岁当上数据总监，分享第一次做Leader的心得](https://mp.weixin.qq.com/s/QePhtlNK9RE3ir-7HS7aOg)<br>
 **团队管理方面的基本功和方法论：定策略、建团队、立规矩、拿结果。**<br>
 定策略：要明确公司高层的真实目的；对自己的团队了如指掌；管理者专精的行业知识和经验。<br>
@@ -612,32 +700,29 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **站点概括**：专注于数据科学。
 
 ### 国内优秀技术人
-- [http://michael282694.com](http://michael282694.com)<br>
-**技术栈**：michael282694，数据分析挖掘产品开发、爬虫、Java、Python。
-- [https://www.cnblogs.com/LittleHann](https://www.cnblogs.com/LittleHann)<br>
-**技术栈**：LittleHann，我也不知道该怎么描述，Han师傅会的太多了，C++、Java、Python、PHP、Web安全、系统安全，不过目前好像做算法多一些。
-- [https://feei.cn](https://feei.cn)<br>
-**技术栈**：FeeiCN，专注自动化漏洞发现和入侵检测防御。
-- [http://www.yqxiaojunjie.com](http://www.yqxiaojunjie.com)<br>
-**技术栈**：xiaojunjie，专注于代码审计、CTF。
+- [michael282694](http://michael282694.com)<br>
+**技术栈**：数据分析挖掘产品开发、爬虫、Java、Python。
+- [LittleHann](https://www.cnblogs.com/LittleHann)<br>
+**技术栈**：我也不知道该怎么描述，Han师傅会的太多了，C++、Java、Python、PHP、Web安全、系统安全，不过目前好像做算法多一些。
+- [FeeiCN](https://feei.cn)<br>
+**技术栈**：专注自动化漏洞发现和入侵检测防御。
+- [xiaojunjie](http://www.yqxiaojunjie.com)<br>
+**技术栈**：专注于代码审计、CTF。
 - [云雷](https://yq.aliyun.com/users/xorxhltb3una2?spm=a2c4e.11153940.blogrightarea90906.2.bc412a21Jh3MYf)<br>
-**技术栈**：云雷，阿里云存储技术专家，专注于日志分析与业务，日志计算驱动业务增长。
-- [https://iami.xyz](https://iami.xyz/)<br>
-**技术栈**：iami，主要研究Web安全、机器学习，喜欢Python和Go。一直偷学师傅的博客。
-- [https://www.cdxy.me](https://www.cdxy.me)<br>
-**技术栈**：cdxy，早先主要做Web安全，CTF，代码审计，现在主要做安全研究与数据分析，初步估算技术领先我1～2年，师傅别学了。
-- [http://www.csuldw.com](http://www.csuldw.com)<br>
-**技术栈**：csuldw，专注于机器学习、数据挖掘、人工智能。
-- [https://molunerfinn.com/](https://molunerfinn.com/)<br>
-**技术栈**：molunerfinn，专注于前端，北邮大佬，和404notfound同级。
+**技术栈**：阿里云存储技术专家，专注于日志分析与业务，日志计算驱动业务增长。
+- [iami](https://iami.xyz/)<br>
+**技术栈**：主要研究Web安全、机器学习，喜欢Python和Go。一直偷学师傅的博客。
+- [cdxy](https://www.cdxy.me)<br>
+**技术栈**：早先主要做Web安全，CTF，代码审计，现在主要做安全研究与数据分析，初步估算技术领先我1～2年，师傅别学了。
+- [csuldw](http://www.csuldw.com)<br>
+**技术栈**：专注于机器学习、数据挖掘、人工智能。
+- [molunerfinn](https://molunerfinn.com/)<br>
+**技术栈**：专注于前端，北邮大佬，和404notfound同级。
+- [刘建平Pinard](https://www.cnblogs.com/pinard)<br>
+**技术栈**：机器学习、深度学习、强化学习、自然语言处理、数学统计学、大数据挖掘，相关tutorial非常棒。
 
 ## 废弃
 - [Efficient and Flexible Discovery of PHP Vulnerability译文](https://mp.weixin.qq.com/s/xMoDTEvj91RgXFXfykS9tQ)
 - [Efficient and Flexible Discovery of PHP Application Vulnerabilities原文](https://swag.cispa.saarland/papers/skoruppa2017php.pdf)
 - [The Code Analysis Platform "Octopus"](https://github.com/octopus-platform)
 - [A Code Intelligence System：The Octopus Platform](https://octopus-platform.github.io/)
-
-
-
-
-
