@@ -1,14 +1,10 @@
 # 404 Not Found的知识库
-最近更新日期：2020/02/21
+最近更新日期：2020/03/16
 
 最近一周新增：
-- [GRAPH CONVOLUTIONAL NETWORKS](http://tkipf.github.io/graph-convolutional-networks/)
-- [gcn](https://github.com/tkipf/gcn)
-- [git-lfs](https://coding.net/help/doc/git/git-lfs.html)
-- [卷积神经网络(CNN)模型结构](https://www.cnblogs.com/pinard/p/6483207.html)
-- [直观理解神经网络最后一层全连接+Softmax](https://www.cnblogs.com/shine-lee/p/10077961.html)（便于理解）
-- [总结卷积神经网络发展历程 - 没头脑的文章](https://zhuanlan.zhihu.com/p/76275427)（很全面）
-- [三次简化一张图：一招理解LSTM/GRU门控机制](https://zhuanlan.zhihu.com/p/28297161)（很清晰）
+- [图计算在基础安全的落点](https://www.cdxy.me/?p=817)
+- [科研论文如何想到不错的 idea？](https://www.zhihu.com/question/300967426)
+- [tensorflow issues#22512](https://github.com/tensorflow/tensorflow/issues/22512)
 
 ## 硬实力
 - [计算机理论基础](#计算机理论基础)
@@ -206,6 +202,8 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
   **CORS**支持所有类型的HTTP请求，是跨域HTTP请求的根本解决方案。**JSONP**只支持GET请求，优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。不管是**Node中间件代理**还是**nginx反向代理**，主要是通过同源策略对服务器不加限制。日常工作中，用的比较多的跨域方案是CORS和nginx反向代理。
 - [如何在Jupyter Notebook中使用Python虚拟环境？](https://zhuanlan.zhihu.com/p/29564719)<br>
 **Anaconda**：安装插件，conda install nb_conda
+- [既然有 HTTP 请求，为什么还要用 RPC 调用？ - 易哥的回答](https://www.zhihu.com/question/41609070/answer/1030913797)<b>
+**RPC**：Restful VS RPC。RPC包括：反向代理、序列化与反序列化、通信（HTTP、TCP、UDP）、异常处理
 
 ## 底层研究
 - [python requests库流程简析](https://www.jianshu.com/p/a5e98489dcb8)<br>
@@ -344,6 +342,8 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 图承载者拓扑信息，而拓扑信息可以看作一种特征维度，有些攻防场景有明显的拓扑特征。Louvain算法的关键点是图的边的权重，在具体的攻防场景下需要专门研究，例如在DGA场景下，域名A与B的相关性(weight)=同时访问过A和B域名的IP数量。cdxy师傅用SQL实现了这种逻辑。
 - [社区发现算法 - Fast Unfolding（Louvian）算法初探](https://www.cnblogs.com/LittleHann/p/9078909.html)
 - [A DGA Odyssey PDNS Driven DGA Analysis](https://pc.nanog.org/static/published/meetings/NANOG71/1444/20171004_Gong_A_Dga_Odyssey__v1.pdf)
+- [图计算在基础安全的落点](https://www.cdxy.me/?p=817)<br>
+学到了：图在入侵检测、入侵响应、威胁情报、UEBA上的落地。入侵检测：企业入侵检测的发展方向、数据分析能力的发展历程。入侵响应：**过程中解决的问题**（日志的完整性和丰富性、海量数据和长时间窗口的关联分析、图的实时构建和查询、交互与可视化）。UEBA：云原生的可信任和零信任的发展-》默认安全-》获取可信服务的凭证，“供应链”式攻击-》构建在认证之上的入侵检测-》行为分析和画像。**总结：业务问题-》数据问题。**
 
 ### AI与安全
 - [安全场景、基于AI的安全算法和安全数据分析学习资料整理](https://github.com/404notf0und/AI-for-Security-Learning)
@@ -388,6 +388,11 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **有监督学习-树系列算法**：单模型，gradient boosting machine和deep learning是首选。gbm不需要复杂的特征工程，不需要太多时间去调参数，dl则需要比较多的时间去调网络结构。**从overfit角度理解**，两者都有overfit甚至perfect fit的能力，overfit能力越强，可塑性越强，然后我们要解决的问题就是如果把模型训练的“恰好”，比如gbm里有early_stopping功能。线性回归模型就缺乏overfit能力，如果实际数据符合线性模型的关系，那可以得到很好的结果，如果不符合的话，就需要做特征工程，可特征工程又是一个比较主观的过程。树的优势，非参数模型，gbm的overfit能力强。而random forest的perfact fit能力很差，这是因为rf的树是独立训练的，没有相互协作，虽然是非参数型模型，但是浪费了这个先天优势。
 - [【总结】树类算法认知总结](https://www.jianshu.com/p/432764633f6f)<br>
 **有监督学习-树类算法**：分类树和回归树的区别；避免决策树过拟合的方法；随机森林怎么应用到分类和回归问题上；kaggle上为啥GBDT比RF更优；RF、GBDT、XGBoost的认知（原理、优缺点、区别、特性）。
+- [LightGBM](https://fuhailin.github.io/LightGBM/)
+- [LightGBM算法总结](https://blog.csdn.net/weixin_39807102/article/details/81912566)
+- [『我爱机器学习』集成学习（四）LightGBM](https://www.hrwhisper.me/machine-learning-lightgbm/)
+- [如何玩转LightGBM](https://v.qq.com/x/page/k0362z6lqix.html)（官方slides讲解）<br>
+**有监督学习-LightGBM-个人理解**：**LightGBM几大特性及原理：直方图分割及直方图差加速（直方图两大改进：直方图复杂度=O(#feature×#data)，GOSS降低样本数，EFB降低特征数）-》效率和内存提升。Leaf-wise with max depth limitation取代Level-wise-》准确率提升。支持原生类别特征。并行计算：数据并行（水平划分数据）、特征并行（垂直划分数据）、PV-Tree投票并行（本质上是数据并行）。**
 - [快速弄懂机器学习里的集成算法：原理、框架与实战](https://mp.weixin.qq.com/s/Q6OotQYIsSm7HW2T4ClLjg)
 - [时间序列数据的聚类有什么好方法？](https://www.zhihu.com/question/50656303/answer/584063648?utm_source=wechat_session&utm_medium=social&utm_oi=663312716719067136)<br>
 **无监督学习-时间序列问题**：传统的机器学习数据分析领域：提取特征，使用聚类算法聚集；在自然语言处理领域：为了寻找相似的新闻或是把相似的文本信息聚集到一起，可以使用word2vec把自然语言处理成向量特征，然后使用KMeans等机器学习算法来作聚类；另一种做法是使用Jaccard相似度来计算两个文本内容之间的相似性，然后使用层次聚类的方法来作聚类。常见的聚类算法：基于距离的机器学习聚类算法（KMeans）、基于相似性的机器学习聚类算法（层次聚类）。对时间序列数据进行聚类的方法：时间序列的特征构造、时间序列的相似度方法。如果使用深度学习的话，要么就提供大量的标签数据；要么就只能使用一些无监督的编码器的方法。
@@ -397,6 +402,11 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 **无监督学习-层次聚类-相似性计算**：曼哈顿距离、欧式距离、切比雪夫距离、余弦相似度、皮尔逊相关系数、Jaccard系数。
 
 ### 深度学习
+
+#### CPU环境搭建
+- [tensorflow issues#22512](https://github.com/tensorflow/tensorflow/issues/22512)<br>
+**问题本质**：报错：ImportError: DLL load failed，原因：缺少依赖，解决方法：pip install --index-url https://pypi.douban.com/simple tensorflow==2.0.0，会自动安装依赖。
+
 #### GPU环境搭建
 - [Tensorflow和Keras 常见问题（持续更新~）](https://zhuanlan.zhihu.com/p/81721574)（坑点）
 - [Tested build configurations](https://tensorflow.google.cn/install/source)（版本对应速查表）
@@ -430,6 +440,7 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 - [gcn](https://github.com/tkipf/gcn)
 - [GRAPH CONVOLUTIONAL NETWORKS](http://tkipf.github.io/graph-convolutional-networks/)<br>
 **图神经网络**：相较于CNN，区别是图卷积算子计算公式。
+- [keras-attention-mechanism](https://github.com/philipperemy/keras-attention-mechanism)
 
 #### 神经网络应用
 - [[AI识人]OpenPose：实时多人2D姿态估计 | 附视频测试及源码链接](https://zhuanlan.zhihu.com/p/37526892)
@@ -684,6 +695,9 @@ Red Team的定义--->Red Team的目标（学习和利用已知真实攻击者的
 ### 思考
 - [好的研究想法从哪里来](https://mp.weixin.qq.com/s/OSVpS3Q15kI0NshpzCjavA)<br>
 **研究的本质是对未知领域的探索，是对开放问题的答案的追寻。“好”的定义-》区分好与不好的能力-》全面了解所在研究方向的历史和现状-》实践法/类比法/组合法**。 **这就好比是机器学习的训练和测试阶段，****训练**：全面了解所在研究方向的历史和现状，判断不同时期的研究工作的好与不好。**测试**：实践法/类比法/组合法出的idea，判断自己的研究工作好与不好。
+- [科研论文如何想到不错的 idea？](https://www.zhihu.com/question/300967426)<br>
+**模块化学习、交叉、布局可预期的趋势**。
+
 ## 注意事项
 * **领域点-线-面体系**：点：自己focus的领域；线：上游和下游；面：大领域。不要过度focus在自己工作的领域，要有全局化的眼光，特别是自己的上游和下游。
 * **日常学习点-线-面体系**：点：自己focus的安全数据分析领域；线：安全/数据分析；面：全局安全内容/行业发展/职业规划。每日专研至少一小时小领域；每日精读至少半小时/至少一篇安全/数据分析/行业发展/职业规划精品文章；每日大量浏览增量文章/存量文章。**保持学习与思考的敏感性。**
