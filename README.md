@@ -1,10 +1,17 @@
 # 404 Not Found的知识库
-最近更新日期：2020/03/16
+最近更新日期：2020/04/03
 
 最近一周新增：
-- [图计算在基础安全的落点](https://www.cdxy.me/?p=817)
-- [科研论文如何想到不错的 idea？](https://www.zhihu.com/question/300967426)
-- [tensorflow issues#22512](https://github.com/tensorflow/tensorflow/issues/22512)
+
+- [理解 Word2Vec 之 Skip-Gram 模型](https://zhuanlan.zhihu.com/p/27234078)
+- [基于TensorFlow实现Skip-Gram模型 - 天雨粟的文章](https://zhuanlan.zhihu.com/p/27296712)
+- [Word2Vec Tutorial - The Skip-Gram Model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
+- [Word2Vec Tutorial Part 2 - Negative Sampling](http://mccormickml.com/2017/01/11/word2vec-tutorial-part-2-negative-sampling/)
+- [Word2Vec word embedding tutorial in Python and TensorFlow](https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
+- [word2vec_basic tensorlflow源码分析](https://github.com/tensorflow/tensorflow/blob/r0.12/tensorflow/examples/tutorials/word2vec/word2vec_basic.py)
+- [A Word2Vec Keras tutorial](http://adventuresinmachinelearning.com/word2vec-keras-tutorial/)
+- [keras_word2vec@adventures-in-ml-code](https://github.com/adventuresinML/adventures-in-ml-code/blob/master/keras_word2vec.py)
+- [keras序列预处理源码分析](https://github.com/keras-team/keras/blob/master/keras/preprocessing/sequence.py)
 
 ## 硬实力
 - [计算机理论基础](#计算机理论基础)
@@ -208,6 +215,7 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
 ## 底层研究
 - [python requests库流程简析](https://www.jianshu.com/p/a5e98489dcb8)<br>
   **python requests库实现**：socket->httplib->urllib->urllib3->requests。requests.get的内部调用流程：requests.get->requests()->Session.request->Session.send->adapter.send->HTTPConnectionPool(urllib3)->HTTPConnection(httplib)。
+  
   ```
   1、socket：是TCP/IP最直接的实现，实现端到端的网络传输
   2、httplib：基于socket库，是最基础最底层的http库，主要将数据按照http协议组织，然后创建socket连接，将封装的数据发往服务端
@@ -216,9 +224,22 @@ LeetCode上的题大致分为三种类型：考察数据结构：比如链表、
   5、requests：基于urllib3库，比urllib3更高级的是实现了Session对象，用Session对象保存一些数据状态，进一步提高了效率
   ```
 - [XGBoost原理和底层实现剖析](https://snaildove.github.io/2018/10/02/get-started-XGBoost/)（学到了）<br>
-**XGBoost**：从树的分数（目标函数：损失函数（二阶展开）+正则项），树的结构（分裂决策（预排序））方面理解。
+  **XGBoost**：从树的分数（目标函数：损失函数（二阶展开）+正则项），树的结构（分裂决策（预排序））方面理解。
 - [Lightgbm 直方图优化算法深入理解](https://blog.csdn.net/anshuai_aw1/article/details/83040541)<br>
 **Lightgbm**：相较于预排序而言，lgb采用了直方图来处理节点分裂，寻找最优分割点。算法思想：在训练前预先把特征值转化为bin value，也就是对每个特征的取值做分段函数，将所有样本在该特征上的取值划分到某一段（bin）中，最终把特征取值从连续值转化为离散值。直方图也可以用来做差加速，计算直方图的复杂度是基于桶的个数的。
+- [keras文本预处理源码分析](https://keras.io/preprocessing/text/)<br>
+**Keras-文本预处理**：![](https://github.com/404notf0und/Always-Learning/blob/master/images/keras-text-review.png)
+- [keras序列预处理源码分析](https://github.com/keras-team/keras/blob/master/keras/preprocessing/sequence.py)
+
+### Word2Vec
+- [理解 Word2Vec 之 Skip-Gram 模型](https://zhuanlan.zhihu.com/p/27234078)
+- [基于TensorFlow实现Skip-Gram模型 - 天雨粟的文章](https://zhuanlan.zhihu.com/p/27296712)
+- [Word2Vec Tutorial - The Skip-Gram Model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
+- [Word2Vec Tutorial Part 2 - Negative Sampling](http://mccormickml.com/2017/01/11/word2vec-tutorial-part-2-negative-sampling/)
+- [Word2Vec word embedding tutorial in Python and TensorFlow](https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
+- [word2vec_basic tensorlflow源码分析](https://github.com/tensorflow/tensorflow/blob/r0.12/tensorflow/examples/tutorials/word2vec/word2vec_basic.py)
+- [A Word2Vec Keras tutorial](http://adventuresinmachinelearning.com/word2vec-keras-tutorial/)
+- [keras_word2vec@adventures-in-ml-code](https://github.com/adventuresinML/adventures-in-ml-code/blob/master/keras_word2vec.py)
 
 ## 安全技术
 ### 漏洞
